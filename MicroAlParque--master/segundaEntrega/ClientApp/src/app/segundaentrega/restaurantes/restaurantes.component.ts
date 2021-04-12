@@ -22,38 +22,38 @@ export class RestaurantesComponent implements OnInit {
     this.buildForm();
   }
 
-  private buildForm(){
-    this.restaurantes.nit = '';
-    this.restaurantes.nombre = '';
-    this.restaurantes.propietario = '';
-    this.restaurantes.direccion = '';
-    this.restaurantes.cantidadPersonal = 0;
+  private buildForm(){
+    this.restaurantes.nit = '';
+    this.restaurantes.nombre = '';
+    this.restaurantes.propietario = '';
+    this.restaurantes.direccion = '';
+    this.restaurantes.cantidadPersonal = 0;
     this.restaurantes.telefono = '';
     this.restaurantes.email = '';
     this.restaurantes.sedes = 0;
     this.restaurantes.añoFuncionamiento = 0;
     this.restaurantes.especialidad = '';
-    this.formGroup = this.formBuilder.group({
-      nit: [this.restaurantes.nit, Validators.required],
-      nombre: [this.restaurantes.nombre, Validators.required],
-      propietario: [this.restaurantes.propietario, Validators.required],
-      direccion: [this.restaurantes.direccion, Validators.required],
-      cantidadPersonal: [this.restaurantes.cantidadPersonal, [Validators.required, Validators.min(1)]],
-      telefono: [this.restaurantes.telefono, Validators.required],
-      email: [this.restaurantes.email, Validators.required],
-      sedes: [this.restaurantes.sedes, [Validators.required, Validators.min(1)]],
-      añoFuncionamiento: [this.restaurantes.añoFuncionamiento, [Validators.required, Validators.min(1)]],
-      especialidad: [this.restaurantes.especialidad, Validators.required],
+    this.formGroup = this.formBuilder.group({
+      nit: [this.restaurantes.nit, Validators.required],
+      nombre: [this.restaurantes.nombre, Validators.required],
+      propietario: [this.restaurantes.propietario, Validators.required],
+      direccion: [this.restaurantes.direccion, Validators.required],
+      cantidadPersonal: [this.restaurantes.cantidadPersonal, [Validators.required, Validators.min(1)]],
+      telefono: [this.restaurantes.telefono, Validators.required],
+      email: [this.restaurantes.email, Validators.required],
+      sedes: [this.restaurantes.sedes, [Validators.required, Validators.min(1)]],
+      añoFuncionamiento: [this.restaurantes.añoFuncionamiento, [Validators.required, Validators.min(1)]],
+      especialidad: [this.restaurantes.especialidad, Validators.required],
     });
    
   }
 
-  onSubmit() {
+  onSubmit() {
 
-        if (this.formGroup.invalid) {
-          return;
-        }
-        this.add();
+        if (this.formGroup.invalid) {
+          return;
+        }
+        this.add();
   }
 
   add() {
@@ -71,8 +71,9 @@ export class RestaurantesComponent implements OnInit {
     )
   }
 
-  get control() { 
-    return this.formGroup.controls;
+  get control() { 
+    return this.formGroup.controls;
   }
-    
+ 
+ 
 }

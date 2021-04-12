@@ -147,7 +147,7 @@ namespace Datos.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
-                        .HasColumnType("varchar(15)");
+                        .HasColumnType("varchar(40)");
 
                     b.Property<string>("EstadoCivil")
                         .HasColumnType("varchar(15)");
@@ -215,7 +215,8 @@ namespace Datos.Migrations
             modelBuilder.Entity("Entidad.Restaurante", b =>
                 {
                     b.Property<string>("NIT")
-                        .HasColumnType("varchar(15)");
+                        .HasColumnType("varchar(15)")
+                        .HasMaxLength(15);
 
                     b.Property<int>("AñoFuncionamiento")
                         .HasColumnType("int");
@@ -227,7 +228,7 @@ namespace Datos.Migrations
                         .HasColumnType("varchar(25)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(25)");
+                        .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("Especialidad")
                         .HasColumnType("nvarchar(25)");

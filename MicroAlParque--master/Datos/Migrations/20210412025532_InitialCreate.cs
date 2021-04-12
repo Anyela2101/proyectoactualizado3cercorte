@@ -10,13 +10,13 @@ namespace Datos.Migrations
                 name: "Restaurantes",
                 columns: table => new
                 {
-                    NIT = table.Column<string>(type: "varchar(15)", nullable: false),
+                    NIT = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false),
                     Nombre = table.Column<string>(type: "varchar(20)", nullable: true),
                     Propietario = table.Column<string>(type: "varchar(20)", nullable: true),
                     Direccion = table.Column<string>(type: "varchar(25)", nullable: true),
                     CantidadPersonal = table.Column<int>(type: "int", nullable: false),
                     Telefono = table.Column<string>(type: "nvarchar(15)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(25)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(40)", nullable: true),
                     Sedes = table.Column<int>(type: "int", nullable: false),
                     AñoFuncionamiento = table.Column<int>(type: "int", nullable: false),
                     Especialidad = table.Column<string>(type: "nvarchar(25)", nullable: true)
@@ -81,7 +81,7 @@ namespace Datos.Migrations
                     Edad = table.Column<int>(type: "int", nullable: false),
                     Sexo = table.Column<string>(type: "varchar(10)", nullable: true),
                     Telefono = table.Column<string>(type: "varchar(15)", nullable: true),
-                    Email = table.Column<string>(type: "varchar(15)", nullable: true),
+                    Email = table.Column<string>(type: "varchar(40)", nullable: true),
                     EstadoCivil = table.Column<string>(type: "varchar(15)", nullable: true),
                     PaisProcedencia = table.Column<string>(type: "varchar(15)", nullable: true),
                     NivelEducativo = table.Column<string>(type: "varchar(15)", nullable: true),

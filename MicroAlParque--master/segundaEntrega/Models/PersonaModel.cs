@@ -38,7 +38,7 @@ namespace segundaEntrega.Models
     public class validarSexo : ValidationAttribute{
         protected override ValidationResult IsValid (object value, ValidationContext ValidationContext)
         {
-            if ((value.ToString().ToUpper()== "M")|| (value.ToString().ToUpper()== "F")){
+            if ((value.ToString().ToUpper()== "MASCULINO")|| (value.ToString().ToUpper()== "FEMENINO")){
                 return ValidationResult.Success;
             }else{
                 return new ValidationResult(ErrorMessage);

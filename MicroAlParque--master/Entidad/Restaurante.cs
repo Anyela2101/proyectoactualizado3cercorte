@@ -26,7 +26,7 @@ namespace Entidad
         [Column(TypeName = "nvarchar(15)")]
         public string Telefono { get; set; }
 
-        [Column(TypeName = "nvarchar(25)")]
+        [Column(TypeName = "nvarchar(40)")]
         public string Email { get; set; }
 
         [Column(TypeName = "int")]

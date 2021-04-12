@@ -69,7 +69,7 @@ export class PersonalComponent implements OnInit {
   private validarSexo (control: AbstractControl){
     const sexo = control.value;
 
-    if(sexo.toLocaleUpperCase()!== 'M' && sexo.toLocaleUpperCase()!== 'F'){
+    if(sexo.toLocaleUpperCase()!== 'MASCULINO' && sexo.toLocaleUpperCase()!== 'FEMENINO'){
       return {validarSexo: true, messageSexo: 'Sexo No Valido' };
     }
     return null;
@@ -132,4 +132,5 @@ export class PersonalComponent implements OnInit {
         this.restaurantes=result;
       });
     }
+    
 }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(PersonaContext))]
-    [Migration("20201216205237_InitialCreate")]
+    [Migration("20210412025532_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -149,7 +149,7 @@ namespace Datos.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
-                        .HasColumnType("varchar(15)");
+                        .HasColumnType("varchar(40)");
 
                     b.Property<string>("EstadoCivil")
                         .HasColumnType("varchar(15)");
@@ -217,7 +217,8 @@ namespace Datos.Migrations
             modelBuilder.Entity("Entidad.Restaurante", b =>
                 {
                     b.Property<string>("NIT")
-                        .HasColumnType("varchar(15)");
+                        .HasColumnType("varchar(15)")
+                        .HasMaxLength(15);
 
                     b.Property<int>("AñoFuncionamiento")
                         .HasColumnType("int");
@@ -229,7 +230,7 @@ namespace Datos.Migrations
                         .HasColumnType("varchar(25)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(25)");
+                        .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("Especialidad")
                         .HasColumnType("nvarchar(25)");
