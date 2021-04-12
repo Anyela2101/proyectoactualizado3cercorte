@@ -35,8 +35,7 @@ export class ConocimientoService {
     buscar(identificacion: string): Observable<Conocimiento>{
       return this.http.get<Conocimiento>(this.baseUrl+'api/Conocimientos/'+identificacion)
       .pipe(
-        tap(_ => this.handleErrorService.log('Encontrado')),
-        catchError(this.handleErrorService.handleError<Conocimiento>('Buscar Persona', null))
+        tap(_ => this.handleErrorService.log('Encontrado'))
       );
     }
 }

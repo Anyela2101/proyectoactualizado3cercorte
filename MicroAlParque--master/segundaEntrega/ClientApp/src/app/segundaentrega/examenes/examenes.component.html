@@ -41,7 +41,7 @@
             <div class="form-group">
                 <label for="nombre" class="">Nombre de examenes realizado:</label>
               <div class="">
-            <input type="text" name="examenes" id="nombre" class="form-control" placeholder="" tabindex="1">
+            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="" tabindex="1">
               </div>
             </div>
         </div>
@@ -50,17 +50,17 @@
             <div class="form-group">
                 <label for="nombre" class="">Adjuntar Examenes:</label>
               <div class="">
-                <input type="file" name="nombre" id="nombre" class="form-control" placeholder="" tabindex="1">
+                <input type="file" name="file" id="file" class="form-control" placeholder="" tabindex="1"(change)="subirArchivo($event.target.files)">
               </div>
               
             </div>
         </div>
-        <button class="btn btn-secondary btn-block">Finalizar</button>
+        <button class="btn btn-secondary btn-block"(click)="add()">Finalizar</button>
         
        
        </section>
        <section class="form-registro2">
-          <button class="btn btn-secondary btn-block">Cancelar</button>
+          <button class="btn btn-secondary btn-block">Guardar</button>
           <button class="btn2 btn-secondary btn-block"(click)="Buscar()">Buscar</button>
        </section>
        

@@ -3,11 +3,14 @@
         <img src="../../assets/Imagenes/logo.png" class="profile_image" alt="" style="width: 100px; height: 100px;">
         <h4 *ngIf="currentUser">ADMINISTRADOR</h4>
     </div>
-    <p>
-        <a data-toggle="collapse"
-        data-target="#collapseRestaurante" aria-expanded="false" aria-controls="collapseRestaurante" *ngIf="currentUser">
-        <i class="fas fa-utensils"></i><span>Restaurantes</span></a>
-    </p>
+    <div id="btn-restaurantes">
+        <p>
+            <a data-toggle="collapse"
+            data-target="#collapseRestaurante" aria-expanded="false" aria-controls="collapseRestaurante" *ngIf="currentUser">
+            <i class="fas fa-utensils"></i><span>Restaurantes</span></a>
+        </p>
+    </div>
+   
     <div class="collapse Sub-Menu" id="collapseRestaurante">
         <hr style="background-color: rgb(250, 81, 81);">
         <button class="btnbarra" style="width: 100%; " type="bootton" data-toggle="collapse"
@@ -40,23 +43,6 @@
     
     <p>
         <a data-toggle="collapse"
-        data-target="#collapseExamenes" aria-expanded="false" aria-controls="collapseExamenes" *ngIf="currentUser">
-        <i class="fas fa-briefcase-medical"></i><span>Examenes</span></a>
-    </p>
-    <div class="collapse Sub-Menu" id="collapseExamenes">
-        <hr style="background-color: rgb(250, 81, 81);">
-        <button class="btnbarra" style="width: 100%; " type="bootton" data-toggle="collapse"
-            data-target="#collapseExamenes" aria-expanded="false" aria-controls="collapseExamenes" [routerLink]='["/examenes"]'>
-            <span class="fas fa-users"></span>Registrar Examenes
-        </button>
-        <button class="btnbarra" style="width: 100%; " type="bootton" data-toggle="collapse"
-            data-target="#collapseExamenes" aria-expanded="false" aria-controls="collapseExamenes" >
-            <span class="fas fa-list-ol"></span>Consultar Examenes
-        </button>
-        <hr>
-    </div>
-    <p>
-        <a data-toggle="collapse"
         data-target="#collapseEncuesta" aria-expanded="false" aria-controls="collapseEncuesta" *ngIf="currentUser">
         <i class="far fa-address-book"></i><span>Encuestas</span></a>
     </p>
@@ -76,7 +62,29 @@
         </button>
         <hr>
     </div>
+    
+    <p>
+        <a data-toggle="collapse"
+        data-target="#collapseExamenes" aria-expanded="false" aria-controls="collapseExamenes" *ngIf="currentUser">
+        <i class="fas fa-briefcase-medical"></i><span>Examenes</span></a>
+    </p>
+    <div class="collapse Sub-Menu" id="collapseExamenes">
+        <hr style="background-color: rgb(250, 81, 81);">
+        <button class="btnbarra" style="width: 100%; " type="bootton" data-toggle="collapse"
+            data-target="#collapseExamenes" aria-expanded="false" aria-controls="collapseExamenes" [routerLink]='["/examenes"]'>
+            <span class="fas fa-users"></span>Registrar Examenes
+        </button>
+        <button class="btnbarra" style="width: 100%; " type="bootton" data-toggle="collapse"
+            data-target="#collapseExamenes" aria-expanded="false" aria-controls="collapseExamenes" >
+            <span class="fas fa-list-ol"></span>Consultar Examenes
+        </button>
+        <hr>
+    </div>
 
+   
+
+    <a [routerLink]='["/listachequeo"]' *ngIf="currentUser"><i class="fas fa-tasks"></i><span>Lista de Chequeo</span></a>
+    
     <p>
         <a data-toggle="collapse"
         data-target="#collapseReportes" aria-expanded="false" aria-controls="collapseReportes" *ngIf="currentUser">
@@ -99,8 +107,6 @@
         <hr>
     </div>
 
-    <a [routerLink]='["/listachequeo"]' *ngIf="currentUser"><i class="fas fa-tasks"></i><span>Lista de Chequeo</span></a>
-    
     <a [routerLinkActive]="['link-active']" *ngIf="currentUser" (click)="logout()"><i class="fa fa-sign-out"></i>
         <span>Logout</span></a>
     

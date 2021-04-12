@@ -34,8 +34,7 @@ export class ActitudesService {
     buscar(identificacion: string): Observable<Actitudes>{
       return this.http.get<Actitudes>(this.baseUrl+'api/Actitudes/'+identificacion)
       .pipe(
-        tap(_ => this.handleErrorService.log('Encontrado')),
-        catchError(this.handleErrorService.handleError<Actitudes>('Buscar Persona', null))
+        tap(_ => this.handleErrorService.log('Encontrado'))
       );
     }
 }

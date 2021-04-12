@@ -41,3 +41,8 @@ input{
 .form-group2{
     padding-bottom: 115px;
 }
+select{
+    width: 68%;
+    float:right;
+    margin-top: -35px;
+}

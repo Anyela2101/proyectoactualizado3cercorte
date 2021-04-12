@@ -7,7 +7,7 @@
               <label for="nombre" class="">Identificacion:</label>
             <div class="">
               <input type="text"  name="identificacion" formControlName="identificacion" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.identificacion.touched && control.identificacion.errors}" />
+              [ngClass]="{ 'is-invalid':  control.identificacion.touched && control.identificacion.errors}" maxlength="12" />
 
                   <div *ngIf="control.identificacion.errors" class="invalid-feedback">
                       <div *ngIf ="control.identificacion.errors.required">Se require la identificacion</div>
@@ -21,7 +21,7 @@
               <label for="nombre" class="">Nombres:</label>
             <div class="">
           <input type="text" name="nombres" formControlName="nombres" class="form-control"
-            [ngClass]="{'is-invalid':  control.nombres.touched && control.nombres.errors}"/>
+            [ngClass]="{'is-invalid':  control.nombres.touched && control.nombres.errors}" maxlength="20"/>
             <div *ngIf="control.nombres.errors" class="invalid-feedback">
               <div *ngIf ="control.nombres.errors.required">Se requiere el nombre</div>
             </div>
@@ -34,7 +34,7 @@
               <label for="nombre" class="">Apellidos:</label>
             <div class="">
               <input type="text"  name="apellidos" formControlName="apellidos" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.apellidos.touched && control.apellidos.errors}" />
+              [ngClass]="{ 'is-invalid':  control.apellidos.touched && control.apellidos.errors}" maxlength="20"/>
 
                   <div *ngIf="control.apellidos.errors" class="invalid-feedback">
                       <div *ngIf ="control.apellidos.errors.required">Se require el apellido</div>
@@ -48,7 +48,7 @@
               <label for="nombre" class ="">Edad:</label>
             <div class="">
               <input type="number"  name="edad" formControlName="edad" class="form-control" 
-              [ngClass]="{ 'is-invalid':  control.edad.touched && control.edad.errors}"/>
+              [ngClass]="{ 'is-invalid':  control.edad.touched && control.edad.errors}" min = "18" max="99"/>
 
               <div *ngIf="control.edad.errors" class="invalid-feedback">
                   <div *ngIf="control.edad.errors.required">Se require la edad</div>
@@ -61,9 +61,14 @@
         <div class="form-group ">
             <label for="nombre" class="">Sexo:</label>
           <div class="">
-            <input type ="text" name ="sexo" formControlName="sexo" class ="form-control"
-            [ngClass] ="{ 'is-invalid':  control.sexo.touched && control.sexo.errors}" />
-
+            <!-- <input type ="text" name ="sexo" formControlName="sexo" class ="form-control"
+            [ngClass] ="{ 'is-invalid':  control.sexo.touched && control.sexo.errors}" /> -->
+            <select name="sexo"  formControlName="sexo" class ="form-control"
+            [ngClass] ="{ 'is-invalid':  control.sexo.touched && control.sexo.errors}">
+              <option value="value1" Selected>Seleccione</option>
+              <option value="F" >F</option>
+              <option value="M">M</option>
+            </select>
             <div *ngIf="control.sexo.errors && formGroup.get('sexo')" class="invalid-feedback">
                 <div *ngIf="control.sexo.errors.required">Se require el sexo</div>
                 <div *ngIf="control.sexo.errors.validSexo">{{control.sexo.errors.messageSexo}}</div>
@@ -96,7 +101,7 @@
               <div class="form-group ">
                   <label for="nombre" class="">E-mail:</label>
                 <div class="">
-                  <input type="text"  name="email" formControlName="email"  class="form-control"
+                  <input type="email"  name="email" formControlName="email"  class="form-control"
                   [ngClass]="{ 'is-invalid':  control.email.touched && control.email.errors}" />
 
                   <div *ngIf="control.email.errors" class="invalid-feedback">
@@ -147,6 +152,30 @@
                 </div>
               </div>
           </div>
+          <div class="">
+            <div class="form-group ">
+                <label for="usuario" class="">Usuario:</label>
+              <div class="">
+            <input type="text" name="usuario" formControlName="usuario" class="form-control"
+              [ngClass]="{'is-invalid':  control.usuario.touched && control.usuario.errors}"/>
+              <div *ngIf="control.usuario.errors" class="invalid-feedback">
+                <div *ngIf ="control.usuario.errors.required">Se requiere el usuario</div>
+              </div>
+              </div>
+            </div>
+        </div>
+        <div class="">
+          <div class="form-group ">
+              <label for="contrasena" class="">Contraseña:</label>
+            <div class="">
+          <input type="text" name="contrasena" formControlName="contrasena" class="form-control"
+            [ngClass]="{'is-invalid':  control.contrasena.touched && control.contrasena.errors}"/>
+            <div *ngIf="control.contrasena.errors" class="invalid-feedback">
+              <div *ngIf ="control.contrasena.errors.required">Se requiere la contraseña</div>
+            </div>
+            </div>
+          </div>
+      </div>
           <div class="">
             <div class ="form-group2">
                 <label for="nombre" class="">NIT restaurante:</label>

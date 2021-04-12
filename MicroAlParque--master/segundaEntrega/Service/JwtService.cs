@@ -14,11 +14,11 @@ namespace segundaEntrega.Service
     {
         private readonly AppSetting _appSettings;
         public JwtService(IOptions<AppSetting> appSettings)=> _appSettings = appSettings.Value;
-        public LoginViewModel GenerateToken(Usuario userLogIn)
+        public UsuarioViewModel GenerateToken(Usuario userLogIn)
         {
             // return null if user not found
             if (userLogIn == null) return null;
-            var userResponse = new LoginViewModel() { FirstName = userLogIn.FirstName, LastName = userLogIn.LastName, User = userLogIn.User };
+            var userResponse = new UsuarioViewModel() { FirstName = userLogIn.FirstName, LastName = userLogIn.LastName, User = userLogIn.User };
             // authentication successful so generate jwt token
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);

@@ -3,7 +3,7 @@
     top: 100px;
     left:400px;
     width:1200px;
-    height: 900px;
+    height: 700px;
     background:   #fcfdff;
     padding: 30px;
     border-radius: 4px;
@@ -12,10 +12,10 @@
     box-shadow: 7px 13px 37px rgb(151, 145, 145);
 }
 .form-registro1{
-width:1000px;
-  /* border: 1px solid black;*/
-   left:1000px;
+width:1000px;/*
+   border: 1px solid black;*/
    padding-bottom: 30px;
+
 }
 .form-registro2{
     width:500px;

@@ -32,6 +32,7 @@ namespace segundaEntrega.Models
         public string NivelEducativo { get; set; }
         [Required (ErrorMessage = "El NIT restaurante es requerido")]
         public string Idrestaurante { get; set; }
+        public Usuario Usuario { get; set; }
     }
 
     public class validarSexo : ValidationAttribute{

@@ -1,3 +1,6 @@
+import { Examenes } from "./Examen";
+import { Usuario } from "./usuario";
+
 export class Persona {
     identificacion: string;
     nombres: string;
@@ -10,5 +13,12 @@ export class Persona {
     paisProcedencia: string;
     nivelEducativo: string;
     Idrestaurante:string;
+    examenes: Array<Examenes>;
+    usuario: Usuario;
+
+    constructor() {
+        this.examenes = [];
+        this.usuario = new Usuario();
+    }
 }
 

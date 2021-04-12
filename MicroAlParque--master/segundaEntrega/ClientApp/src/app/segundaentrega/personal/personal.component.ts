@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { Restaurantes } from '../models/restaurantes';
 import { RestaurantesService } from 'src/app/services/restaurantes.service';
+import { Usuario } from '../models/usuario';
 
 
 @Component({
@@ -42,6 +43,8 @@ export class PersonalComponent implements OnInit {
     this.persona.paisProcedencia = '';
     this.persona.Idrestaurante ='';
     this.persona.nivelEducativo = '';
+    this.persona.usuario.user = '';
+    this.persona.usuario.password = '';
     
     
     this.formGroup = this.formBuilder.group({
@@ -55,7 +58,9 @@ export class PersonalComponent implements OnInit {
       estadoCivil: [this.persona.estadoCivil, Validators.required],
       paisProcedencia: [this.persona.paisProcedencia, Validators.required],
       Idrestaurante: [this.persona.Idrestaurante, Validators.required],
-      nivelEducativo: [this.persona.nivelEducativo, Validators.required]
+      nivelEducativo: [this.persona.nivelEducativo, Validators.required],
+      usuario: ['', Validators.required],
+      contrasena: ['', Validators.required]
 
     });
    
@@ -81,10 +86,18 @@ export class PersonalComponent implements OnInit {
 
   add(){
     this.persona = this.formGroup.value;
-    console.log("NIT: "+this.persona.Idrestaurante+"  ID: "+this.persona.identificacion);
+    console.log("NIT: "+this.persona.email+"  ID: "+this.persona.identificacion);
   /*   this.BuscarIdrestaurante(this.persona.idrestaurante);
-
+      
     if(this.restaurante!=null){ */
+      var usuario = new Usuario();
+      usuario.user = this.formGroup.value.usuario;
+      usuario.password = this.formGroup.value.contrasena;
+      usuario.email = this.persona.email;
+      usuario.firstName = this.persona.nombres;
+      usuario.lastName = this.persona.apellidos;
+      usuario.tipo = "Usuario";
+      this.persona.usuario = usuario;
       this.personaService.post(this.persona).subscribe(p => {
         if (p != null) {
           const messageBox = this.modalService.open(AlertModalComponent);

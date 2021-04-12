@@ -33,7 +33,10 @@ namespace segundaEntrega.Controllers
             var response = _practicasService.Buscar(identificacion);
             if(response.Error)
             {
-                return BadRequest(response.Mensaje);
+                ModelState . AddModelError ( " Error al guardar practica " , response. Mensaje );
+                var  detallesproblemas  =  new  ValidationProblemDetails ( ModelState );
+                detallesproblemas.Status  =  StatusCodes.Status500InternalServerError ;
+                return  BadRequest ( detallesproblemas );
             }
             return Ok(response.Practicas);
         }

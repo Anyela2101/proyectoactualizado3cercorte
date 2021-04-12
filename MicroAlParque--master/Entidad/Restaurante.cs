@@ -7,6 +7,7 @@ namespace Entidad
     public class Restaurante
     {
         [Key]
+        [StringLength(15, ErrorMessage = "El NIT no puede ser mayor a 15 caracteres")]
         [Column(TypeName = "varchar(15)")]
         public string NIT { get; set; }
         
@@ -36,5 +37,16 @@ namespace Entidad
         
         [Column(TypeName = "nvarchar(25)")]
         public string Especialidad { get; set; }
+
+        public Persona registrarDueño(Persona persona){
+            Propietario = persona.Nombres;
+            return persona;
+        }
+
+        public string ValidarNit(string nit){
+            NIT = nit;
+            return NIT;
+        }
+        
     }
 }

@@ -30,7 +30,7 @@ namespace segundaEntrega.Controllers
             var admin = _context.Usuarios.Find("admin");
             if (admin == null)
             {
-                _context.Usuarios.Add(new Entidad.Usuario() { User = "admin", Password = "admin", Email = "admin@gmail.com", Token = "a1b2c3", FirstName = "Adminitrador", LastName = ""});
+                _context.Usuarios.Add(new Entidad.Usuario() { User = "admin", Password = "admin", Email = "admin@gmail.com", Token = "a1b2c3", FirstName = "Adminitrador", LastName = "", Tipo="Administrador"});
                 var i = _context.SaveChanges();
             }
             _jwtService = new JwtService(appSettings);
@@ -38,7 +38,7 @@ namespace segundaEntrega.Controllers
         }
         [AllowAnonymous]
         [HttpPost()]
-        public IActionResult Login(LoginInputModel model)
+        public IActionResult Login(UsuarioInputModel model)
         {
             var user = _userService.Validate(model.User, model.Password);
 

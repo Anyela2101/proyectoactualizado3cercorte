@@ -9,6 +9,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-reportes',
@@ -19,6 +20,10 @@ export class ReportesComponent{
   restaurantes:Restaurantes[];
   personas:Persona[];
   searchText: string;
+  encontro:string;
+  name = 'Angular';
+  page = 1;
+  pageSize =5;
   constructor(private restauranteService: RestaurantesService,private modalService: NgbModal,
               private personaService:PersonaService) { }
 
@@ -30,17 +35,28 @@ export class ReportesComponent{
   Buscar(){
     this.restauranteService.buscar(this.searchText).subscribe(
       r => {
+        
         if (r != null) {
+          //this.encontro='s';
+        /*   const messageBox = this.modalService.open(AlertModalComponent) */
+          /* messageBox.componentInstance.title = "Resultado Operación";
+          messageBox.componentInstance.message = 'Persona existe!!! :-)'; */
+          //this.restaurante=r;
+        }else{
+          //this.encontro='n';
+       /*    const messageBox = this.modalService.open(AlertModalComponent)
+          messageBox.componentInstance.title = "Resultado Operación";
+          messageBox.componentInstance.message = 'Persona no existe!!! :-)'; */
+        }
+        /* if(this.encontro='s'){
           const messageBox = this.modalService.open(AlertModalComponent)
           messageBox.componentInstance.title = "Resultado Operación";
           messageBox.componentInstance.message = 'Persona existe!!! :-)';
-          //this.restaurante=r;
         }else{
           const messageBox = this.modalService.open(AlertModalComponent)
           messageBox.componentInstance.title = "Resultado Operación";
           messageBox.componentInstance.message = 'Persona no existe!!! :-)';
-        }
-   
+        } */
     });
 
     //this.downloadPF();

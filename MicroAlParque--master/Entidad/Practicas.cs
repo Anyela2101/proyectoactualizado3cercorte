@@ -22,6 +22,8 @@ namespace Entidad
 
         [Column(TypeName = "decimal(4)")]
         public decimal Total{ get; set; }
+        
+
 
         public void Calcularpuntos(){
             decimal punto1,punto2,punto4;

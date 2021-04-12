@@ -115,23 +115,26 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\DELL\\Downloads\\MicroAlParque3erCorte-master\\MicroAlParque--master\\Entidad\\Entidad.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\Downloads\\MicroAlParque3erCorte-master\\MicroAlParque--master\\Entidad\\Entidad.csproj",
       "projectName": "Entidad",
-      "projectPath": "c:\\Users\\DELL\\Downloads\\MicroAlParque3erCorte-master\\MicroAlParque--master\\Entidad\\Entidad.csproj",
+      "projectPath": "C:\\Users\\DELL\\Downloads\\MicroAlParque3erCorte-master\\MicroAlParque--master\\Entidad\\Entidad.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\DELL\\Downloads\\MicroAlParque3erCorte-master\\MicroAlParque--master\\Entidad\\obj\\",
+      "outputPath": "C:\\Users\\DELL\\Downloads\\MicroAlParque3erCorte-master\\MicroAlParque--master\\Entidad\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
           "projectReferences": {}
         }
       },
@@ -143,6 +146,7 @@
     },
     "frameworks": {
       "netstandard2.1": {
+        "targetAlias": "netstandard2.1",
         "dependencies": {
           "System.ComponentModel.Annotations": {
             "target": "Package",
@@ -164,7 +168,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -31,13 +31,11 @@ export class HandleHttpErrorService {
     console.error(error);
   }
   private mostrarError500(error: any) {
-    console.error(error);
+    this.mostrarError400(error);  
   }
 
   public log(message: string) {
-    const messageBox = this.modalService.open(AlertModalComponent)
-    messageBox.componentInstance.title = 'Resultado Operación';
-    messageBox.componentInstance.message = message;
+   console.log(message);
   }
 
   private mostrarError400(error: any): void {

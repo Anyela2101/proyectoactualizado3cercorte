@@ -170,9 +170,14 @@ namespace Datos.Migrations
                     b.Property<string>("Telefono")
                         .HasColumnType("varchar(15)");
 
+                    b.Property<string>("UsuarioUser")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Identificacion");
 
                     b.HasIndex("Idrestaurante");
+
+                    b.HasIndex("UsuarioUser");
 
                     b.ToTable("Personas");
                 });
@@ -261,6 +266,9 @@ namespace Datos.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Tipo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Token")
                         .HasColumnType("nvarchar(max)");
 
@@ -295,6 +303,10 @@ namespace Datos.Migrations
                     b.HasOne("Entidad.Restaurante", null)
                         .WithMany()
                         .HasForeignKey("Idrestaurante");
+
+                    b.HasOne("Entidad.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioUser");
                 });
 
             modelBuilder.Entity("Entidad.Practicas", b =>

@@ -39,7 +39,7 @@ namespace Entidad
 
         [Column(TypeName = "varchar(15)")]
         public string NivelEducativo { get; set; }
-
+        public Usuario Usuario { get; set; }
         
         [Column(TypeName = "varchar(15)")]
         public string Idrestaurante { get; set; }

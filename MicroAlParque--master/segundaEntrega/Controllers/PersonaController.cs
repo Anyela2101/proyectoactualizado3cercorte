@@ -78,6 +78,7 @@ namespace segundaEntrega.Controllers
                 persona.PaisProcedencia = personaInput.PaisProcedencia;
                 persona.NivelEducativo=personaInput.NivelEducativo;
                 persona.Idrestaurante = personaInput.Idrestaurante;
+                persona.Usuario = personaInput.Usuario;
             return persona;
         }
     }
